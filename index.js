@@ -34,6 +34,6 @@ app.get('/v1/authorize', (req, res) => {
     res.status(301).redirect(`https://tsmarketplacedemo.web.app/${redirectUri}?at=${idTokenHint}`);
 });
 
-app.listen(4000, () => {
-    console.log('Server is running on port 4000');
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
 });
