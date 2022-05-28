@@ -2,13 +2,6 @@ const express = require('express');
 
 const app = express();
 
-// uriHome: 'marketplace'
-// http://localhost:4000/v1/authorize?response_type=code&client_id=marketplace&scope=OPENID&id_token_hint=aaaabbbbccccdddd
-// http://localhost:4000/v1/authorize?response_type=code&client_id=marketplace&redirect_uri=marketplace&scope=OPENID&id_token_hint=aaaabbbbccccdddd
-
-// uriPurchase: 'shoppingcard'
-// http://localhost:4000/v1/authorize?response_type=code&client_id=marketplace&redirect_uri=shoppingcard&scope=OPENID&id_token_hint=aaaabbbbccccdddd
-
 app.get('/v1/authorize', (req, res) => {
     const responseType = req.query.response_type;
     const clientId = req.query.client_id;
