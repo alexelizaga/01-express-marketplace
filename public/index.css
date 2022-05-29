@@ -1,3 +1,22 @@
 html,body {
-    background-color: grey;
+    background-color: #e53935;
+    margin: 0;
+}
+
+.index__container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.index__title {
+    color: white
+}
+
+.index__link {
+    color: white;
+    margin: 5px 0;
+    text-decoration: none;
 }
