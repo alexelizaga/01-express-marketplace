@@ -1,32 +1,14 @@
 const express = require('express');
+require('dotenv').config();
+
+console.log( process.env );
 
 const app = express();
 
-app.get('/v1/authorize', (req, res) => {
-    const responseType = req.query.response_type;
-    const clientId = req.query.client_id;
-    const redirectUri = req.query.redirect_uri;
-    const scope = req.query.scope;
-    const idTokenHint = req.query.id_token_hint;
+app.use(express.static('public'));
 
-    if(responseType !== 'code' || clientId !== 'marketplace' || scope !== 'OPENID' || !idTokenHint) {
-        res.json({
-            ok: false,
-            responseType,
-            clientId,
-            redirectUri,
-            scope,
-            idTokenHint
-        });
-    };
+app.use('/v1/authorize', require('./routes/authorize'));
 
-    if (!redirectUri || redirectUri === 'marketplace') {
-        res.status(301).redirect(`https://tsmarketplacedemo.web.app?at=${idTokenHint}`);
-    };
-
-    res.status(301).redirect(`https://tsmarketplacedemo.web.app/${redirectUri}?at=${idTokenHint}`);
-});
-
-app.listen(process.env.PORT, () => {
+app.listen(4001, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 });
