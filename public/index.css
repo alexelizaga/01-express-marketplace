@@ -12,11 +12,21 @@ html,body {
 }
 
 .index__title {
-    color: white
+    color: white;
+    font-size: 3em;
+    margin: 0;
 }
 
 .index__link {
     color: white;
-    margin: 5px 0;
     text-decoration: none;
+}
+
+.index__link:hover {
+    text-decoration: underline;
+}
+
+.index__code {
+    color: white;
+    font-size: 1.5em;
 }

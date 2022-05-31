@@ -10,9 +10,29 @@
 <body>
     <div class="index__container">
         <h1 class="index__title">Marketplace Back End</h1>
-        <a class="index__link" href="./v1/authorize?response_type=code&client_id=marketplace&redirect_uri=marketplace&scope=OPENID&id_token_hint=aaaabbbbccccdddd">Redirect to Marketplace</a>
-        <a class="index__link" href="./v1/authorize?response_type=code&client_id=marketplace&redirect_uri=shoppingcard&scope=OPENID&id_token_hint=aaaabbbbccccdddd">Redirect to Purchase</a>
-        <a class="index__link" href="./v1/authorize?response_type=code&client_id=marketplace&redirect_uri=page&scope=OPENID&id_token_hint=aaaabbbbccccdddd">Redirect to Page</a>
+        <pre>
+            <code class="index__code">
+                <b>urls: </b>{
+                    <a class="index__link" href="./v1/authorize?response_type=code&client_id=marketplace&redirect_uri=marketplace&scope=OPENID&id_token_hint=aaaabbbbccccdddd">Redirect to Marketplace</a>
+                    <a class="index__link" href="./v1/authorize?response_type=code&client_id=marketplace&redirect_uri=marketplace_my_orders&scope=OPENID&id_token_hint=aaaabbbbccccdddd">Redirect to My Orders</a>
+                    <a class="index__link" href="./v1/authorize?response_type=code&client_id=marketplace&redirect_uri=shoppingcard&scope=OPENID&id_token_hint=aaaabbbbccccdddd">Redirect to Purchase</a> 
+                }
+                <b>urlBase: </b>{
+                    https://bc-marketplace-backend.herokuapp.com/v1/authorize
+                }
+                <b>params: </b> {
+                    "response_type": "code",
+                    "client_id": "marketplace",
+                    "redirect_uri": uriHome | uriMyOrders,
+                    "scope": "OPENID",
+                    "id_token_hint": "aaaabbbbccccdddd"
+                }
+                <b>uris:</b> {
+                    "uriHome": "marketplace",
+                    "uriMyOrders": "marketplace_my_orders"
+                }
+            </code>
+        </pre>
     </div>
 </body>
 </html>
