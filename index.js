@@ -9,6 +9,6 @@ app.use(express.static('public'));
 
 app.use('/v1/authorize', require('./routes/authorize'));
 
-app.listen(process.env.PORT, () => {
+app.listen(4000, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 });
